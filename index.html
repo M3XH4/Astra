@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra</title>
+    <link rel="icon" type="image/x-icon" href="styles/res/logo.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/loading.css">
+    <link rel="stylesheet" href="splide/dist/css/splide.min.css">
+    <link rel="stylesheet" href="splide/dist/css/themes/splide-skyblue.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lilita+One&family=Passion+One&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loading-container unclickable none">
+        <div class="loader">
+            <div class="blackhole">
+              <div class="blackhole-circle"></div>
+              <div class="blackhole-disc"></div>
+            </div>
+            <div class="curve">
+              <svg viewBox="0 0 500 500">
+                <path id="loading" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
+                <text width="500">
+                  <textPath xlink:href="#loading">
+                    loading...
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container-fluid navbar navbar-expand-sm d-flex justify-content-center align-content-center pt-4 navBar" data-bs-theme="dark">
+        <p class="text-center text-white  unclickable webTitle">ASTRA</p>
+    </nav>
+
+    <div class="zodiac-container">
+        
+        <div class="birthdate-container p-5 none">
+            <span class="container-fluid title text-center unclickable">YOUR BIRTHDATE</span>
+            <form id="zodiac-form">
+                <div class="container-fluid input-group input-group-lg date-container mt-2" data-bs-theme="dark">
+                    <select name="month" id="month" class="form-select form-select-lg inside" required>
+                        <option value="">Month</option>
+                        <option value="JAN">January</option>
+                        <option value="FEB">Febuary</option>
+                        <option value="MAR">March</option>
+                        <option value="APR">April</option>
+                        <option value="MAY">May</option>
+                        <option value="JUN">June</option>
+                        <option value="JUL">July</option>
+                        <option value="AUG">August</option>
+                        <option value="SEP">September</option>
+                        <option value="OCT">October</option>
+                        <option value="NOV">November</option>
+                        <option value="DEC">December</option>
+                    </select>
+                    <select name="day" id="day" class="form-select form-select-lg inside" disabled required>
+                        <option value="">Day</option>
+                    </select>
+                </div>
+                <div class="container-md d-flex justify-content-center align-items-center unclickable" id="error-message">
+                    <span>PLEASE SELECT A MONTH AND DAY</span>
+                </div>
+                <button type="submit" class="container-fluid btn mt-5" id="zodiac-button">CLICK TO KNOW ZODIAC</button>
+            </form>
+        </div>
+        
+        <div class="result-container">
+            <div class="background-image"></div>
+            <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="header-container">
+                                <div class="zodiac-image"></div>
+                                <div class="text-container unclickable">
+                                    <p class="h1 zodiacTitle"></p>
+                                    <div class="horizontal-line"></div>
+                                    <span class="zodiacSubText"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="detail-container">
+                                <div class="description-container">
+                                    <div class="header unclickable">
+                                        <p class="h1 zodiacTitle"></p>
+                                    </div>
+                                    <div class="body">
+                                        <span class="zodiacDescription unclickable">
+                                        </span>
+                                    </div>
+                                    <div class="footer">
+                                        
+                                    </div>    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery/jquery.js"></script>
+    <script src="splide/dist/js/splide.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
