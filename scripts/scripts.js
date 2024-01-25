@@ -188,7 +188,7 @@ const zodiacSigns = {
 $(window).on('load', () => {
     let zodiacSign = getLocalStorage('zodiacSign');
 
-    displayZodiac('Pisces');
+    displayZodiac('Cancer');
     $(monthSelect).on('change', (event) => {
         let monthValue = $(monthSelect).val();
         if(monthValue) {
@@ -279,6 +279,7 @@ function displayZodiac(zodiacSign) {
     $(zodiacSubText).html(zodiacSigns[zodiacSign].nickname);
     $(zodiacDescription).html(zodiacSigns[zodiacSign].description);
     $(tarotDescription).html(zodiacSigns[zodiacSign].tarotDescription);
+
 }
 function errorCheck(monthValue, dayValue) {
     const toggleErrorMessage = (message, delay = 0) => {
