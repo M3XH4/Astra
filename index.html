@@ -15,6 +15,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lilita+One&family=Passion+One&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--WHAT IS IT MODAL-->
+    <div class="modal fade" id="witModal">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header witModalHeader unclickable">
+                    <span>WHAT IS IT?</span>
+                </div>
+                <div class="modal-body witModalBody">
+                    <span class="witDescription unclickable">Each zodiac sign is linked to one of the Tarot cards in the Major Arcana. Most of these powerful cards have images of archetypal figures that represent the essence of a type of person. </span>
+                </div>
+                <div class="modal-footer witModalFooter">
+                    <button class="btn btn-info text-white closeButton" data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--MORE INFORMATION MODAL-->
     <div class="modal fade" id="miModal">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -108,7 +124,7 @@
                                         <p class="h1 zodiacTitle"></p>
                                     </div>
                                     <div class="body">
-                                        <span class="zodiacDescription unclickable">
+                                        <span class="zodiacDescription">
                                         </span>
                                     </div>
                                     <div class="footer">
@@ -126,7 +142,7 @@
                                             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
                                         </svg>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">WHAT IS IT?</a></li>
+                                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#witModal">WHAT IS IT?</a></li>
                                             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#miModal">MORE INFORMATION</a></li>
                                         </ul>
                                     </div>

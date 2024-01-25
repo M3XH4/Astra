@@ -213,6 +213,9 @@ body {
     font-size: 1.7rem;
     text-align: justify;
     overflow: auto;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
 }
 .description-container .body .zodiacDescription {
     font-size: 1.4rem;
@@ -249,6 +252,7 @@ body {
     top: 0;
     transform: translateY(-30%);
     width: 60vw;
+    height: 70px;
     margin-top: 30px;    
     backdrop-filter: blur(3px) saturate(200%);
     -webkit-backdrop-filter: blur(3px) saturate(200%);
@@ -280,7 +284,7 @@ body {
 .tarot-container .dropdown-menu .dropdown-item:hover {
     background-color: #693bbf;
 }
-.miModalHeader {
+.miModalHeader, .witModalHeader {
     background-color: #864AF9;
     font-size: 2rem;
     color: white;
@@ -291,22 +295,22 @@ body {
     align-items: center;
     border: none;
 }
-.miModalFooter {
+.miModalFooter, .witModalFooter {
     border: none;
     background-color: #864AF9;
 }
-.miModalBody {
+.miModalBody, .witModalBody {
     text-align: justify;
     font-family: 'Poppins', sans-serif;
     padding: 20px;
     background-color: #4E72FF;
     color: white;
 }
-.miModalBody .tarotDescription {
+.miModalBody .tarotDescription, .witModalBody .witDescription  {
     font-size: 1.5rem;
     white-space: pre-line;
 }
-.miModalFooter .closeButton {
+.miModalFooter .closeButton, .witModalFooter .closeButton {
     font-size: 1.4rem;
     font-family: 'Lilita One', sans-serif;
 }
@@ -331,5 +335,31 @@ body {
     }
     50% {
         transform: translateX(10px);
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .navBar {
+        height: 10vh;
+    }
+    /*Header Container*/
+    .header-container .zodiac-image {
+        width: 90vw;
+    }
+    /*Detail Container*/
+    .description-container {
+        width: 90vw;
+    }
+    .description-container .body .zodiacDescription {
+        font-size: 1.3rem;
+        white-space: pre-line;
+    }
+    /*Tarot Container*/
+    .tarot-container .tarot-image {
+        background-size: contain;
+        width: 100vw;
+        height: 88vh;
+    }
+    .tarot-container .text-container {
+        width: 90vw;
     }
 }
