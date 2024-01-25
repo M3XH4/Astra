@@ -12,15 +12,18 @@ const zodiacButton = document.getElementById('zodiac-button');
 const errorMessage = document.getElementById('error-message');
 
 //Zodiac Display Container
+const resultContainer = document.querySelector('.result-container');
 const headerContainer = document.querySelector('.header-container');
 const textContainer = document.querySelector('.text-container');
 const zodiacImage = document.querySelector('.zodiac-image');
 const zodiacTitle = document.querySelectorAll('.zodiacTitle');
 const zodiacDescription = document.querySelector('.zodiacDescription');
 const zodiacSubText = document.querySelector('.zodiacSubText');
+const zodiacWebsite = document.querySelector('.zodiacWebsite');
 const moreInformation = document.querySelector('.more-information');
 const tarotImage = document.querySelector('.tarot-image');
 const tarotDescription = document.querySelector('.tarotDescription');
+const changeButton = document.querySelector('.cbModalFooter .acceptButton');
 //Months
 const months = {
     'JAN': {
@@ -187,8 +190,16 @@ const zodiacSigns = {
 //Functions
 $(window).on('load', () => {
     let zodiacSign = getLocalStorage('zodiacSign');
+    
+    toggleDisplay(loadingContainer, 5000);
 
-    displayZodiac('Cancer');
+    if(zodiacSign !== null)  {
+        toggleDisplay(resultContainer, 4950);
+        displayZodiac(zodiacSign);
+    }
+    else {
+        toggleDisplay(birthDateContainer, 5000);
+    }
     $(monthSelect).on('change', (event) => {
         let monthValue = $(monthSelect).val();
         if(monthValue) {
@@ -244,15 +255,17 @@ $(window).on('load', () => {
                 $(zodiacButton).prop('disabled', 'false');
             }, 1500);
 
-            
+            setLocalStorage('zodiacSign', zodiacSign);
+            window.location.reload();
         }
         else {
             errorCheck(monthValue, dayValue);
         }
     });
 
-    $(moreInformation).on('click', () => {
-        
+    $(changeButton).on('click', () => {
+        localStorage.clear();
+        window.location.reload();
     });
     let splide = new Splide( '.splide', {
         type   : 'loop',
@@ -262,15 +275,23 @@ $(window).on('load', () => {
         paginationKeyboard: true,
         preloadPages: 1,
         keyboard: 'global',
-        start: 2
+        start: 0
     });
     splide.mount();
 });
+function toggleDisplay(container, delay) {
+    setTimeout(() => {
+        $(container).fadeOut('slow', () => {
+            $(container).toggleClass('none');
+        });
+    }, delay);
+}
 function displayZodiac(zodiacSign) {
     let zodiacUpperCase = zodiacSign.toUpperCase();
     let zodiacLowerCase = zodiacSign.toLowerCase();
 
     let imgSrc = `styles/res/${zodiacLowerCase}/`;
+    let siteSrc = `https://www.usatoday.com/horoscopes/daily/${zodiacLowerCase}/`;
 
     $(zodiacImage).css('background-image', `url(${imgSrc}background.jpg)`);
     $(tarotImage).css('background-image', `url(${imgSrc}tarot.png)`)
@@ -279,7 +300,7 @@ function displayZodiac(zodiacSign) {
     $(zodiacSubText).html(zodiacSigns[zodiacSign].nickname);
     $(zodiacDescription).html(zodiacSigns[zodiacSign].description);
     $(tarotDescription).html(zodiacSigns[zodiacSign].tarotDescription);
-
+    $(zodiacWebsite).prop('src', siteSrc);
 }
 function errorCheck(monthValue, dayValue) {
     const toggleErrorMessage = (message, delay = 0) => {

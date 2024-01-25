@@ -15,6 +15,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lilita+One&family=Passion+One&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--Change Birthdate-->
+    <div class="modal fade" id="cbModal">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header cbModalHeader unclickable">
+                    <span>CONFIRMING</span>
+                </div>
+                <div class="modal-body cbModalBody">
+                    <span class="confirmDescription">ARE YOU SURE?</span>
+                </div>
+                <div class="modal-footer cbModalFooter">
+                    <button class="btn btn-info text-white text-white acceptButton">YES</button>
+                    <button class="btn btn-info text-white closeButton" data-bs-dismiss="modal">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--WHAT IS IT MODAL-->
     <div class="modal fade" id="witModal">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -47,12 +64,13 @@
             </div>
         </div>
     </div>
-    <div class="loading-container unclickable none">
+    <div class="loading-container unclickable">
         <div class="loader">
             <div class="blackhole">
               <div class="blackhole-circle"></div>
               <div class="blackhole-disc"></div>
             </div>
+          
             <div class="curve">
               <svg viewBox="0 0 500 500">
                 <path id="loading" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
@@ -71,8 +89,10 @@
     </nav>
 
     <div class="zodiac-container">
-        
-        <div class="birthdate-container p-5 none">
+        <div class="birthdate-container px-5 pb-5 py-3 none">
+            <div class="container-fluid">
+                <img class="webImage rounded-circle mb-3 unclickable" src="styles/res/logo.png" alt="Image Of Website">
+            </div>
             <span class="container-fluid title text-center unclickable">YOUR BIRTHDATE</span>
             <form id="zodiac-form">
                 <div class="container-fluid input-group input-group-lg date-container mt-2" data-bs-theme="dark">
@@ -102,11 +122,12 @@
             </form>
         </div>
         
-        <div class="result-container">
+        <div class="result-container none">
             <div class="background-image"></div>
             <div class="splide" role="group">
                 <div class="splide__track">
                     <ul class="splide__list">
+                        
                         <li class="splide__slide">
                             <div class="header-container">
                                 <div class="zodiac-image"></div>
@@ -117,6 +138,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="splide__slide">
                             <div class="detail-container">
                                 <div class="description-container">
@@ -133,6 +155,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <li class="splide__slide">
                             <div class="tarot-container">
                                 <div class="tarot-image"></div>
@@ -150,8 +173,19 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="splide__slide">
 
+                        <li class="splide__slide">
+                            <div class="horoscope-container">
+                                <div class="website-container">
+                                    <iframe class="zodiacWebsite unclickable"  referrerpolicy="origin" sandbox></iframe>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="change-container">
+                                <button class="changeBirthdateButton" data-bs-toggle="modal" data-bs-target="#cbModal">Change Zodiac</button>
+                            </div>
                         </li>
                     </ul>
                 </div>

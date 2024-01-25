@@ -38,6 +38,10 @@ body {
 .birthdate-container {
     text-align: center;
 }
+.birthdate-container .webImage {
+    width: 7rem;
+    height: 7rem;
+}
 .birthdate-container .title {
     text-align: center;
     font-size: 2.5rem;
@@ -105,7 +109,7 @@ body {
     height: 88vh;
     z-index: -1;
     background-repeat: no-repeat;
-    background-image: url(res/background2.jpg);
+    background-image: url(res/background.jpg);
     background-color: #0D1F2D;
     background-size: cover;
     background-position: center;
@@ -120,7 +124,7 @@ body {
     width: 100%;
     height: 88vh;
 }
-.header-container, .detail-container, .tarot-container {
+.header-container, .detail-container, .tarot-container, .horoscope-container, .change-container {
     width: 100%;
     height: 88vh;
     display: flex;
@@ -284,6 +288,36 @@ body {
 .tarot-container .dropdown-menu .dropdown-item:hover {
     background-color: #693bbf;
 }
+.horoscope-container .website-container {
+    width: 80vw;
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+}
+.horoscope-container .website-container .zodiacWebsite {
+    position: absolute;
+    top: -530px;
+    right: -15px;
+    width: 100%;
+    height: 300%;
+    border-radius: 15px;
+}
+.change-container .changeBirthdateButton {
+    transition: all 150ms ease-in-out;
+    width: 80%;
+    padding: 10px;
+    font-size: 2rem;
+    backdrop-filter: blur(2px) saturate(120%);
+    -webkit-backdrop-filter: blur(2px) saturate(120%);
+    background-color: rgba(255, 43, 43, 0.518);
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+.change-container .changeBirthdateButton:is(:hover, :focus) {
+    background-color: rgba(225, 22, 22, 0.561);
+    color: #dcdcdc;
+}
 .miModalHeader, .witModalHeader {
     background-color: #864AF9;
     font-size: 2rem;
@@ -295,9 +329,17 @@ body {
     align-items: center;
     border: none;
 }
-.miModalFooter, .witModalFooter {
+.cbModalHeader {
+    background-color: #864AF9;
+    font-size: 2.2rem;
+    color: white;
+    font-family: 'Lilita One', sans-serif;
+    border: none;
+}
+.miModalFooter, .witModalFooter, .cbModalFooter {
     border: none;
     background-color: #864AF9;
+    font-family: 'Lilita One', sans-serif;
 }
 .miModalBody, .witModalBody {
     text-align: justify;
@@ -306,11 +348,19 @@ body {
     background-color: #4d1d9b;
     color: white;
 }
+.cbModalBody {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #4d1d9b;
+    padding: 10px;
+    color: white;
+    font-size: 1.9rem;
+}
 .miModalBody .tarotDescription, .witModalBody .witDescription  {
     font-size: 1.5rem;
     white-space: pre-line;
 }
-.miModalFooter .closeButton, .witModalFooter .closeButton {
+.miModalFooter .closeButton, .witModalFooter .closeButton, .cbModalFooter button {
     font-size: 1.4rem;
     font-family: 'Lilita One', sans-serif;
 }
@@ -365,5 +415,12 @@ body {
     }
     .tarot-container .text-container {
         width: 90vw;
+    }
+    /*Horoscope Container*/
+    .horoscope-container .website-container .zodiacWebsite {
+        top: -150px;
+        right: 0px;
+        width: 100%;
+        height: 300%;
     }
 }
