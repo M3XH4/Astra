@@ -136,8 +136,8 @@ body {
     background-position: center;
     border: none;
     border-radius: 20px;
-    filter: contrast(1.2);
-    filter: brightness(1.1);
+    filter: contrast(1.3);
+    filter: brightness(0.9);
 }
 .header-container .text-container {
     font-family: 'Lilita One', sans-serif;
@@ -338,6 +338,9 @@ body {
     }
 }
 @media only screen and (max-width: 1024px) {
+    .zodiac-container {
+        height: 86vh;
+    }
     .navBar {
         height: 10vh;
     }
