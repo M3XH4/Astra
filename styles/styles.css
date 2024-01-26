@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/poppins.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Lilita One';
+    src: url(fonts/lilitaOne.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Passion One';
+    src: url(fonts/passionOne.ttf) format('truetype');
+}
 ::-webkit-scrollbar {
     color: transparent;
     width: 10px;
@@ -396,9 +408,6 @@ body {
     /*Birthdate Container*/
     .birthdate-container .title {
         font-size: 2rem;
-    }
-    .date-container {
-        width: 100vw;
     }
     .date-container .inside {
         font-size: 1.3rem;

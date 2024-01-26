@@ -10,13 +10,10 @@
     <link rel="stylesheet" href="styles/loading.css">
     <link rel="stylesheet" href="splide/dist/css/splide.min.css">
     <link rel="stylesheet" href="splide/dist/css/themes/splide-galaxy-purple.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lilita+One&family=Passion+One&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
     <!--Change Birthdate-->
-    <div class="modal fade" id="cbModal">
+    <div class="modal fade" id="cbModal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header cbModalHeader unclickable">
@@ -33,7 +30,7 @@
         </div>
     </div>
     <!--WHAT IS IT MODAL-->
-    <div class="modal fade" id="witModal">
+    <div class="modal fade" id="witModal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header witModalHeader unclickable">
@@ -49,7 +46,7 @@
         </div>
     </div>
     <!--MORE INFORMATION MODAL-->
-    <div class="modal fade" id="miModal">
+    <div class="modal fade" id="miModal" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header miModalHeader unclickable">
@@ -89,7 +86,7 @@
     </nav>
 
     <div class="zodiac-container">
-        <div class="birthdate-container px-5 pb-5 py-3 none">
+        <div class="birthdate-container px-3 py-3 none">
             <div class="container-fluid">
                 <img class="webImage rounded-circle mb-3 unclickable" src="styles/res/logo.png" alt="Image Of Website">
             </div>
@@ -118,7 +115,7 @@
                 <div class="container-md d-flex justify-content-center align-items-center unclickable" id="error-message">
                     <span>PLEASE SELECT A MONTH AND DAY</span>
                 </div>
-                <button type="submit" class="container-fluid btn mt-5" id="zodiac-button">CLICK TO KNOW ZODIAC</button>
+                <button type="submit" class="container-fluid btn mt-4" id="zodiac-button">CLICK TO KNOW ZODIAC</button>
             </form>
         </div>
         
