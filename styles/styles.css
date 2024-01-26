@@ -393,6 +393,16 @@ body {
     }
 }
 @media only screen and (max-width: 1024px) {
+    /*Birthdate Container*/
+    .birthdate-container .title {
+        font-size: 2rem;
+    }
+    .date-container {
+        width: 100vw;
+    }
+    .date-container .inside {
+        font-size: 1.3rem;
+    }
     /*Header Container*/
     .header-container .text-container {
         width: 80vw;
