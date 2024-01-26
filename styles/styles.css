@@ -376,6 +376,11 @@ body {
 .shake {
     animation: shake 500ms ease-in-out;
 }
+.hide {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
 @keyframes shake {
     0%, 100% {
         transform: translateX(0);

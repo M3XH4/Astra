@@ -24,6 +24,7 @@ const moreInformation = document.querySelector('.more-information');
 const tarotImage = document.querySelector('.tarot-image');
 const tarotDescription = document.querySelector('.tarotDescription');
 const changeButton = document.querySelector('.cbModalFooter .acceptButton');
+
 //Months
 const months = {
     'JAN': {
@@ -190,15 +191,29 @@ const zodiacSigns = {
 //Functions
 $(window).on('load', () => {
     let zodiacSign = getLocalStorage('zodiacSign');
-    
-    toggleDisplay(loadingContainer, 5000);
+    let splide = new Splide( '.splide', {
+        type   : 'loop',
+        perPage: 1,
+        fixedWidth: '100%',
+        fixedHeight: '88vh',
+        paginationKeyboard: true,
+        lazyLoad: 'nearby',
+        preloadPages: 1,
+        keyboard: 'global'
+    });
+    splide.mount();
 
+    toggleDisplay(loadingContainer, 3000);
     if(zodiacSign !== null)  {
-        toggleDisplay(resultContainer, 4950);
+        setTimeout(()=> {
+            $(resultContainer).removeClass('visually-hidden');
+            $("#splide").removeClass("hide");
+            splide.refresh();
+        }, 3000);
         displayZodiac(zodiacSign);
     }
     else {
-        toggleDisplay(birthDateContainer, 5000);
+        toggleDisplay(birthDateContainer, 3000);
     }
     $(monthSelect).on('change', (event) => {
         let monthValue = $(monthSelect).val();
@@ -267,17 +282,6 @@ $(window).on('load', () => {
         localStorage.clear();
         window.location.reload();
     });
-    let splide = new Splide( '.splide', {
-        type   : 'loop',
-        perPage: 1,
-        fixedWidth: '100%',
-        fixedHeight: '88vh',
-        paginationKeyboard: true,
-        preloadPages: 1,
-        keyboard: 'global',
-        start: 0
-    });
-    splide.mount();
 });
 function toggleDisplay(container, delay) {
     setTimeout(() => {
